@@ -749,9 +749,6 @@ details p {
   display: inline-flex;
   align-items: center;
   width: min(260px, 70vw);
-  padding: 8px 12px;
-  background: var(--white);
-  border-radius: 8px;
 }
 
 .footer-logo {

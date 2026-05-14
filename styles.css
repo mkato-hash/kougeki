@@ -155,8 +155,8 @@ svg {
   overflow: hidden;
   color: var(--white);
   background:
-    linear-gradient(90deg, rgba(6, 23, 45, 0.96) 0%, rgba(6, 23, 45, 0.84) 45%, rgba(6, 23, 45, 0.48) 100%),
-    url("assets/hero-security-dashboard.svg") center / cover no-repeat,
+    linear-gradient(90deg, rgba(6, 23, 45, 0.94) 0%, rgba(6, 23, 45, 0.78) 42%, rgba(6, 23, 45, 0.34) 72%, rgba(6, 23, 45, 0.08) 100%),
+    url("image/FV01.png") center / cover no-repeat,
     var(--navy);
 }
 
@@ -173,9 +173,7 @@ svg {
 .hero-shade {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, rgba(6, 23, 45, 0.2) 0%, rgba(6, 23, 45, 0.6) 100%),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 116px);
+  background: linear-gradient(180deg, rgba(6, 23, 45, 0.04) 0%, rgba(6, 23, 45, 0.38) 100%);
   pointer-events: none;
 }
 
@@ -311,6 +309,7 @@ svg {
   color: var(--yellow);
   font-size: 1.45rem;
   line-height: 1;
+  min-width: 0;
   white-space: nowrap;
 }
 
@@ -318,6 +317,7 @@ svg {
   color: rgba(255, 255, 255, 0.92);
   font-size: 0.93rem;
   font-weight: 800;
+  min-width: 0;
   white-space: nowrap;
 }
 
@@ -823,6 +823,8 @@ details p {
   }
 
   .hero-content {
+    width: 100vw;
+    max-width: 100vw;
     min-height: 680px;
     padding-top: 30px;
     padding-bottom: 44px;
@@ -852,8 +854,8 @@ details p {
   }
 
   .hero-facts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
+    grid-template-columns: 1fr;
+    width: calc(100vw - 28px);
     max-width: calc(100vw - 28px);
     margin-top: 28px;
   }
@@ -866,12 +868,16 @@ details p {
   }
 
   .hero-facts strong {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
     white-space: normal;
   }
 
   .hero-facts span {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
     white-space: normal;
   }
 
@@ -912,5 +918,11 @@ details p {
   .footer-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-content {
+    min-height: 820px;
   }
 }

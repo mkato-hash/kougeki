@@ -279,50 +279,80 @@ svg {
   background: rgba(255, 255, 255, 0.18);
 }
 
-.hero-facts {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
-  width: min(840px, 100%);
-  margin: 40px 0 0;
-  padding: 0;
-  overflow: hidden;
-  list-style: none;
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-}
-
-.hero-facts li {
+.hero-offer {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  min-height: 86px;
-  padding: 16px;
-  background: rgba(6, 23, 45, 0.62);
-  text-align: center;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  width: fit-content;
+  max-width: min(900px, 100%);
+  margin: 38px 0 0;
+  padding: 14px 20px 14px 24px;
+  color: var(--navy);
+  background: linear-gradient(100deg, var(--yellow) 0%, #ffe783 58%, #fff2b0 100%);
+  border-radius: 8px;
+  box-shadow: 0 18px 34px rgba(255, 214, 74, 0.22);
 }
 
-.hero-facts strong {
-  color: var(--yellow);
-  font-size: 1.45rem;
+.hero-offer::before {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  width: 5px;
+  content: "";
+  background: var(--orange);
+  border-radius: 999px;
+}
+
+.offer-unlimited {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  color: var(--white);
+  background: var(--navy);
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.offer-price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  color: var(--navy);
+  font-size: 1.25rem;
+  font-weight: 900;
   line-height: 1;
-  min-width: 0;
   white-space: nowrap;
 }
 
-.hero-facts span {
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 0.93rem;
-  font-weight: 800;
-  min-width: 0;
+.offer-price strong {
+  color: var(--red);
+  font-size: 2.45rem;
+  line-height: 0.9;
+}
+
+.offer-price small {
+  color: var(--navy);
+  font-size: 1rem;
+}
+
+.offer-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--navy);
+  font-size: 0.98rem;
+  font-weight: 900;
   white-space: nowrap;
 }
 
-.hero-facts svg {
-  color: var(--yellow);
+.offer-note svg {
+  color: var(--orange);
 }
 
 .section {
@@ -773,7 +803,6 @@ details p {
     font-size: 2.55rem;
   }
 
-  .hero-facts,
   .feature-grid,
   .flow-list,
   .recommend-grid {
@@ -853,31 +882,31 @@ details p {
     width: 100%;
   }
 
-  .hero-facts {
-    grid-template-columns: 1fr;
+  .hero-offer {
+    display: grid;
     width: calc(100vw - 28px);
     max-width: calc(100vw - 28px);
     margin-top: 28px;
+    padding: 16px 18px 16px 22px;
+    gap: 12px;
   }
 
-  .hero-facts li {
-    min-height: 70px;
-    padding: 12px;
-    gap: 6px;
-    background: rgba(6, 23, 45, 0.9);
+  .hero-offer::before {
+    top: 14px;
+    bottom: 14px;
   }
 
-  .hero-facts strong {
+  .offer-unlimited {
+    width: fit-content;
+    min-height: 34px;
     font-size: 0.95rem;
-    line-height: 1.25;
-    overflow-wrap: anywhere;
-    white-space: normal;
   }
 
-  .hero-facts span {
-    font-size: 0.8rem;
-    line-height: 1.35;
-    overflow-wrap: anywhere;
+  .offer-price strong {
+    font-size: 2.25rem;
+  }
+
+  .offer-note {
     white-space: normal;
   }
 
